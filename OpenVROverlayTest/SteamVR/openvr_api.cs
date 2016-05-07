@@ -15,232 +15,232 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRSystem
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetRecommendedRenderTargetSize(ref uint pnWidth, ref uint pnHeight);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetRecommendedRenderTargetSize GetRecommendedRenderTargetSize;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HmdMatrix44_t _GetProjectionMatrix(EVREye eEye, float fNearZ, float fFarZ, EGraphicsAPIConvention eProjType);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetProjectionMatrix GetProjectionMatrix;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetProjectionRaw(EVREye eEye, ref float pfLeft, ref float pfRight, ref float pfTop, ref float pfBottom);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetProjectionRaw GetProjectionRaw;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate DistortionCoordinates_t _ComputeDistortion(EVREye eEye, float fU, float fV);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ComputeDistortion ComputeDistortion;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HmdMatrix34_t _GetEyeToHeadTransform(EVREye eEye);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetEyeToHeadTransform GetEyeToHeadTransform;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetTimeSinceLastVsync(ref float pfSecondsSinceLastVsync, ref ulong pulFrameCounter);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTimeSinceLastVsync GetTimeSinceLastVsync;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate int _GetD3D9AdapterIndex();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetD3D9AdapterIndex GetD3D9AdapterIndex;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetDXGIOutputInfo(ref int pnAdapterIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetDXGIOutputInfo GetDXGIOutputInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsDisplayOnDesktop();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsDisplayOnDesktop IsDisplayOnDesktop;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _SetDisplayVisibility(bool bIsVisibleOnDesktop);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetDisplayVisibility SetDisplayVisibility;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetDeviceToAbsoluteTrackingPose(ETrackingUniverseOrigin eOrigin, float fPredictedSecondsToPhotonsFromNow, [In, Out] TrackedDevicePose_t[] pTrackedDevicePoseArray, uint unTrackedDevicePoseArrayCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetDeviceToAbsoluteTrackingPose GetDeviceToAbsoluteTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ResetSeatedZeroPose();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ResetSeatedZeroPose ResetSeatedZeroPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HmdMatrix34_t _GetSeatedZeroPoseToStandingAbsoluteTrackingPose();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetSeatedZeroPoseToStandingAbsoluteTrackingPose GetSeatedZeroPoseToStandingAbsoluteTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HmdMatrix34_t _GetRawZeroPoseToStandingAbsoluteTrackingPose();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetRawZeroPoseToStandingAbsoluteTrackingPose GetRawZeroPoseToStandingAbsoluteTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetSortedTrackedDeviceIndicesOfClass(ETrackedDeviceClass eTrackedDeviceClass, [In, Out] uint[] punTrackedDeviceIndexArray, uint unTrackedDeviceIndexArrayCount, uint unRelativeToTrackedDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetSortedTrackedDeviceIndicesOfClass GetSortedTrackedDeviceIndicesOfClass;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EDeviceActivityLevel _GetTrackedDeviceActivityLevel(uint unDeviceId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTrackedDeviceActivityLevel GetTrackedDeviceActivityLevel;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ApplyTransform(ref TrackedDevicePose_t pOutputPose, ref TrackedDevicePose_t pTrackedDevicePose, ref HmdMatrix34_t pTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ApplyTransform ApplyTransform;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole unDeviceType);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTrackedDeviceIndexForControllerRole GetTrackedDeviceIndexForControllerRole;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ETrackedControllerRole _GetControllerRoleForTrackedDeviceIndex(uint unDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetControllerRoleForTrackedDeviceIndex GetControllerRoleForTrackedDeviceIndex;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ETrackedDeviceClass _GetTrackedDeviceClass(uint unDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTrackedDeviceClass GetTrackedDeviceClass;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsTrackedDeviceConnected(uint unDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsTrackedDeviceConnected IsTrackedDeviceConnected;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetBoolTrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetBoolTrackedDeviceProperty GetBoolTrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate float _GetFloatTrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetFloatTrackedDeviceProperty GetFloatTrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate int _GetInt32TrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetInt32TrackedDeviceProperty GetInt32TrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ulong _GetUint64TrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetUint64TrackedDeviceProperty GetUint64TrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HmdMatrix34_t _GetMatrix34TrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetMatrix34TrackedDeviceProperty GetMatrix34TrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetStringTrackedDeviceProperty(uint unDeviceIndex, ETrackedDeviceProperty prop, System.Text.StringBuilder pchValue, uint unBufferSize, ref ETrackedPropertyError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetStringTrackedDeviceProperty GetStringTrackedDeviceProperty;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetPropErrorNameFromEnum(ETrackedPropertyError error);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetPropErrorNameFromEnum GetPropErrorNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _PollNextEvent(ref VREvent_t pEvent, uint uncbVREvent);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PollNextEvent PollNextEvent;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _PollNextEventWithPose(ETrackingUniverseOrigin eOrigin, ref VREvent_t pEvent, uint uncbVREvent, ref TrackedDevicePose_t pTrackedDevicePose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PollNextEventWithPose PollNextEventWithPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetEventTypeNameFromEnum(EVREventType eType);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetEventTypeNameFromEnum GetEventTypeNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate HiddenAreaMesh_t _GetHiddenAreaMesh(EVREye eEye);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetHiddenAreaMesh GetHiddenAreaMesh;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetControllerState(uint unControllerDeviceIndex, ref VRControllerState_t pControllerState);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetControllerState GetControllerState;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetControllerStateWithPose(ETrackingUniverseOrigin eOrigin, uint unControllerDeviceIndex, ref VRControllerState_t pControllerState, ref TrackedDevicePose_t pTrackedDevicePose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetControllerStateWithPose GetControllerStateWithPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _TriggerHapticPulse(uint unControllerDeviceIndex, uint unAxisId, char usDurationMicroSec);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _TriggerHapticPulse TriggerHapticPulse;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetButtonIdNameFromEnum(EVRButtonId eButtonId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetButtonIdNameFromEnum GetButtonIdNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetControllerAxisTypeNameFromEnum(EVRControllerAxisType eAxisType);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetControllerAxisTypeNameFromEnum GetControllerAxisTypeNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _CaptureInputFocus();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CaptureInputFocus CaptureInputFocus;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ReleaseInputFocus();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReleaseInputFocus ReleaseInputFocus;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsInputFocusCapturedByAnotherProcess();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsInputFocusCapturedByAnotherProcess IsInputFocusCapturedByAnotherProcess;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _DriverDebugRequest(uint unDeviceIndex, string pchRequest, string pchResponseBuffer, uint unResponseBufferSize);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _DriverDebugRequest DriverDebugRequest;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRFirmwareError _PerformFirmwareUpdate(uint unDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PerformFirmwareUpdate PerformFirmwareUpdate;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _AcknowledgeQuit_Exiting();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _AcknowledgeQuit_Exiting AcknowledgeQuit_Exiting;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _AcknowledgeQuit_UserPrompt();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _AcknowledgeQuit_UserPrompt AcknowledgeQuit_UserPrompt;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _PerformanceTestEnableCapture(bool bEnable);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PerformanceTestEnableCapture PerformanceTestEnableCapture;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _PerformanceTestReportFidelityLevelChange(int nFidelityLevel);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PerformanceTestReportFidelityLevelChange PerformanceTestReportFidelityLevelChange;
@@ -250,17 +250,17 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRExtendedDisplay
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetWindowBounds(ref int pnX, ref int pnY, ref uint pnWidth, ref uint pnHeight);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWindowBounds GetWindowBounds;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetEyeOutputViewport(EVREye eEye, ref uint pnX, ref uint pnY, ref uint pnWidth, ref uint pnHeight);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetEyeOutputViewport GetEyeOutputViewport;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetDXGIOutputInfo(ref int pnAdapterIndex, ref int pnAdapterOutputIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetDXGIOutputInfo GetDXGIOutputInfo;
@@ -270,117 +270,117 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRApplications
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _AddApplicationManifest(string pchApplicationManifestFullPath, bool bTemporary);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _AddApplicationManifest AddApplicationManifest;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _RemoveApplicationManifest(string pchApplicationManifestFullPath);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RemoveApplicationManifest RemoveApplicationManifest;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsApplicationInstalled(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsApplicationInstalled IsApplicationInstalled;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetApplicationCount();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationCount GetApplicationCount;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _GetApplicationKeyByIndex(uint unApplicationIndex, string pchAppKeyBuffer, uint unAppKeyBufferLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationKeyByIndex GetApplicationKeyByIndex;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _GetApplicationKeyByProcessId(uint unProcessId, string pchAppKeyBuffer, uint unAppKeyBufferLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationKeyByProcessId GetApplicationKeyByProcessId;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _LaunchApplication(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LaunchApplication LaunchApplication;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _LaunchDashboardOverlay(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LaunchDashboardOverlay LaunchDashboardOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _CancelApplicationLaunch(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CancelApplicationLaunch CancelApplicationLaunch;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _IdentifyApplication(uint unProcessId, string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IdentifyApplication IdentifyApplication;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetApplicationProcessId(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationProcessId GetApplicationProcessId;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetApplicationsErrorNameFromEnum(EVRApplicationError error);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationsErrorNameFromEnum GetApplicationsErrorNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetApplicationPropertyString(string pchAppKey, EVRApplicationProperty eProperty, string pchPropertyValueBuffer, uint unPropertyValueBufferLen, ref EVRApplicationError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationPropertyString GetApplicationPropertyString;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetApplicationPropertyBool(string pchAppKey, EVRApplicationProperty eProperty, ref EVRApplicationError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationPropertyBool GetApplicationPropertyBool;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ulong _GetApplicationPropertyUint64(string pchAppKey, EVRApplicationProperty eProperty, ref EVRApplicationError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationPropertyUint64 GetApplicationPropertyUint64;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _SetApplicationAutoLaunch(string pchAppKey, bool bAutoLaunch);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetApplicationAutoLaunch SetApplicationAutoLaunch;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetApplicationAutoLaunch(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationAutoLaunch GetApplicationAutoLaunch;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _GetStartingApplication(string pchAppKeyBuffer, uint unAppKeyBufferLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetStartingApplication GetStartingApplication;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationTransitionState _GetTransitionState();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTransitionState GetTransitionState;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _PerformApplicationPrelaunchCheck(string pchAppKey);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PerformApplicationPrelaunchCheck PerformApplicationPrelaunchCheck;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetApplicationsTransitionStateNameFromEnum(EVRApplicationTransitionState state);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetApplicationsTransitionStateNameFromEnum GetApplicationsTransitionStateNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsQuitUserPromptRequested();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsQuitUserPromptRequested IsQuitUserPromptRequested;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRApplicationError _LaunchInternalProcess(string pchBinaryPath, string pchArguments, string pchWorkingDirectory);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LaunchInternalProcess LaunchInternalProcess;
@@ -390,42 +390,42 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRChaperone
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ChaperoneCalibrationState _GetCalibrationState();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCalibrationState GetCalibrationState;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetPlayAreaSize(ref float pSizeX, ref float pSizeZ);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetPlayAreaSize GetPlayAreaSize;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetPlayAreaRect(ref HmdQuad_t rect);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetPlayAreaRect GetPlayAreaRect;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ReloadInfo();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReloadInfo ReloadInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetSceneColor(HmdColor_t color);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetSceneColor SetSceneColor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetBoundsColor(ref HmdColor_t pOutputColorArray, int nNumOutputColors, float flCollisionBoundsFadeDistance, ref HmdColor_t pOutputCameraColor);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetBoundsColor GetBoundsColor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _AreBoundsVisible();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _AreBoundsVisible AreBoundsVisible;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ForceBoundsVisible(bool bForce);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ForceBoundsVisible ForceBoundsVisible;
@@ -435,102 +435,102 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRChaperoneSetup
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _CommitWorkingCopy(EChaperoneConfigFile configFile);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CommitWorkingCopy CommitWorkingCopy;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _RevertWorkingCopy();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RevertWorkingCopy RevertWorkingCopy;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetWorkingPlayAreaSize(ref float pSizeX, ref float pSizeZ);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWorkingPlayAreaSize GetWorkingPlayAreaSize;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetWorkingPlayAreaRect(ref HmdQuad_t rect);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWorkingPlayAreaRect GetWorkingPlayAreaRect;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetWorkingCollisionBoundsInfo([In, Out] HmdQuad_t[] pQuadsBuffer, ref uint punQuadsCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWorkingCollisionBoundsInfo GetWorkingCollisionBoundsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetLiveCollisionBoundsInfo([In, Out] HmdQuad_t[] pQuadsBuffer, ref uint punQuadsCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLiveCollisionBoundsInfo GetLiveCollisionBoundsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetWorkingSeatedZeroPoseToRawTrackingPose(ref HmdMatrix34_t pmatSeatedZeroPoseToRawTrackingPose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWorkingSeatedZeroPoseToRawTrackingPose GetWorkingSeatedZeroPoseToRawTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetWorkingStandingZeroPoseToRawTrackingPose(ref HmdMatrix34_t pmatStandingZeroPoseToRawTrackingPose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetWorkingStandingZeroPoseToRawTrackingPose GetWorkingStandingZeroPoseToRawTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetWorkingPlayAreaSize(float sizeX, float sizeZ);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingPlayAreaSize SetWorkingPlayAreaSize;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetWorkingCollisionBoundsInfo([In, Out] HmdQuad_t[] pQuadsBuffer, uint unQuadsCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingCollisionBoundsInfo SetWorkingCollisionBoundsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetWorkingSeatedZeroPoseToRawTrackingPose(ref HmdMatrix34_t pMatSeatedZeroPoseToRawTrackingPose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingSeatedZeroPoseToRawTrackingPose SetWorkingSeatedZeroPoseToRawTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetWorkingStandingZeroPoseToRawTrackingPose(ref HmdMatrix34_t pMatStandingZeroPoseToRawTrackingPose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingStandingZeroPoseToRawTrackingPose SetWorkingStandingZeroPoseToRawTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ReloadFromDisk(EChaperoneConfigFile configFile);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReloadFromDisk ReloadFromDisk;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetLiveSeatedZeroPoseToRawTrackingPose(ref HmdMatrix34_t pmatSeatedZeroPoseToRawTrackingPose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLiveSeatedZeroPoseToRawTrackingPose GetLiveSeatedZeroPoseToRawTrackingPose;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetWorkingCollisionBoundsTagsInfo([In, Out] byte[] pTagsBuffer, uint unTagCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingCollisionBoundsTagsInfo SetWorkingCollisionBoundsTagsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetLiveCollisionBoundsTagsInfo([In, Out] byte[] pTagsBuffer, ref uint punTagCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLiveCollisionBoundsTagsInfo GetLiveCollisionBoundsTagsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _SetWorkingPhysicalBoundsInfo([In, Out] HmdQuad_t[] pQuadsBuffer, uint unQuadsCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetWorkingPhysicalBoundsInfo SetWorkingPhysicalBoundsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetLivePhysicalBoundsInfo([In, Out] HmdQuad_t[] pQuadsBuffer, ref uint punQuadsCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLivePhysicalBoundsInfo GetLivePhysicalBoundsInfo;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ExportLiveToBuffer(System.Text.StringBuilder pBuffer, ref uint pnBufferLength);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ExportLiveToBuffer ExportLiveToBuffer;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ImportFromBufferToWorking(string pBuffer, uint nImportFlags);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ImportFromBufferToWorking ImportFromBufferToWorking;
@@ -540,137 +540,137 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRCompositor
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetTrackingSpace(ETrackingUniverseOrigin eOrigin);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetTrackingSpace SetTrackingSpace;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ETrackingUniverseOrigin _GetTrackingSpace();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTrackingSpace GetTrackingSpace;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRCompositorError _WaitGetPoses([In, Out] TrackedDevicePose_t[] pRenderPoseArray, uint unRenderPoseArrayCount, [In, Out] TrackedDevicePose_t[] pGamePoseArray, uint unGamePoseArrayCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _WaitGetPoses WaitGetPoses;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRCompositorError _GetLastPoses([In, Out] TrackedDevicePose_t[] pRenderPoseArray, uint unRenderPoseArrayCount, [In, Out] TrackedDevicePose_t[] pGamePoseArray, uint unGamePoseArrayCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLastPoses GetLastPoses;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRCompositorError _GetLastPoseForTrackedDeviceIndex(uint unDeviceIndex, ref TrackedDevicePose_t pOutputPose, ref TrackedDevicePose_t pOutputGamePose);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLastPoseForTrackedDeviceIndex GetLastPoseForTrackedDeviceIndex;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRCompositorError _Submit(EVREye eEye, ref Texture_t pTexture, ref VRTextureBounds_t pBounds, EVRSubmitFlags nSubmitFlags);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _Submit Submit;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ClearLastSubmittedFrame();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ClearLastSubmittedFrame ClearLastSubmittedFrame;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _PostPresentHandoff();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PostPresentHandoff PostPresentHandoff;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetFrameTiming(ref Compositor_FrameTiming pTiming, uint unFramesAgo);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetFrameTiming GetFrameTiming;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate float _GetFrameTimeRemaining();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetFrameTimeRemaining GetFrameTimeRemaining;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _FadeToColor(float fSeconds, float fRed, float fGreen, float fBlue, float fAlpha, bool bBackground);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FadeToColor FadeToColor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _FadeGrid(float fSeconds, bool bFadeIn);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FadeGrid FadeGrid;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRCompositorError _SetSkyboxOverride([In, Out] Texture_t[] pTextures, uint unTextureCount);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetSkyboxOverride SetSkyboxOverride;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ClearSkyboxOverride();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ClearSkyboxOverride ClearSkyboxOverride;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _CompositorBringToFront();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CompositorBringToFront CompositorBringToFront;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _CompositorGoToBack();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CompositorGoToBack CompositorGoToBack;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _CompositorQuit();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CompositorQuit CompositorQuit;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsFullscreen();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsFullscreen IsFullscreen;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetCurrentSceneFocusProcess();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCurrentSceneFocusProcess GetCurrentSceneFocusProcess;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetLastFrameRenderer();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetLastFrameRenderer GetLastFrameRenderer;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _CanRenderScene();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CanRenderScene CanRenderScene;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ShowMirrorWindow();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShowMirrorWindow ShowMirrorWindow;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _HideMirrorWindow();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _HideMirrorWindow HideMirrorWindow;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsMirrorWindowVisible();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsMirrorWindowVisible IsMirrorWindowVisible;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _CompositorDumpImages();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CompositorDumpImages CompositorDumpImages;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ShouldAppRenderWithLowResources();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShouldAppRenderWithLowResources ShouldAppRenderWithLowResources;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ForceInterleavedReprojectionOn(bool bOverride);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ForceInterleavedReprojectionOn ForceInterleavedReprojectionOn;
@@ -680,317 +680,317 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVROverlay
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _FindOverlay(string pchOverlayKey, ref ulong pOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FindOverlay FindOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _CreateOverlay(string pchOverlayKey, string pchOverlayFriendlyName, ref ulong pOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CreateOverlay CreateOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _DestroyOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _DestroyOverlay DestroyOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetHighQualityOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetHighQualityOverlay SetHighQualityOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ulong _GetHighQualityOverlay();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetHighQualityOverlay GetHighQualityOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetOverlayKey(ulong ulOverlayHandle, System.Text.StringBuilder pchValue, uint unBufferSize, ref EVROverlayError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayKey GetOverlayKey;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetOverlayName(ulong ulOverlayHandle, System.Text.StringBuilder pchValue, uint unBufferSize, ref EVROverlayError pError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayName GetOverlayName;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayImageData(ulong ulOverlayHandle, IntPtr pvBuffer, uint unBufferSize, ref uint punWidth, ref uint punHeight);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayImageData GetOverlayImageData;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetOverlayErrorNameFromEnum(EVROverlayError error);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayErrorNameFromEnum GetOverlayErrorNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayFlag(ulong ulOverlayHandle, VROverlayFlags eOverlayFlag, bool bEnabled);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayFlag SetOverlayFlag;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayFlag(ulong ulOverlayHandle, VROverlayFlags eOverlayFlag, ref bool pbEnabled);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayFlag GetOverlayFlag;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayColor(ulong ulOverlayHandle, float fRed, float fGreen, float fBlue);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayColor SetOverlayColor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayColor(ulong ulOverlayHandle, ref float pfRed, ref float pfGreen, ref float pfBlue);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayColor GetOverlayColor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayAlpha(ulong ulOverlayHandle, float fAlpha);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayAlpha SetOverlayAlpha;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayAlpha(ulong ulOverlayHandle, ref float pfAlpha);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayAlpha GetOverlayAlpha;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayWidthInMeters(ulong ulOverlayHandle, float fWidthInMeters);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayWidthInMeters SetOverlayWidthInMeters;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayWidthInMeters(ulong ulOverlayHandle, ref float pfWidthInMeters);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayWidthInMeters GetOverlayWidthInMeters;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayAutoCurveDistanceRangeInMeters(ulong ulOverlayHandle, float fMinDistanceInMeters, float fMaxDistanceInMeters);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayAutoCurveDistanceRangeInMeters SetOverlayAutoCurveDistanceRangeInMeters;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayAutoCurveDistanceRangeInMeters(ulong ulOverlayHandle, ref float pfMinDistanceInMeters, ref float pfMaxDistanceInMeters);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayAutoCurveDistanceRangeInMeters GetOverlayAutoCurveDistanceRangeInMeters;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTextureColorSpace(ulong ulOverlayHandle, EColorSpace eTextureColorSpace);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTextureColorSpace SetOverlayTextureColorSpace;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTextureColorSpace(ulong ulOverlayHandle, ref EColorSpace peTextureColorSpace);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTextureColorSpace GetOverlayTextureColorSpace;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTextureBounds(ulong ulOverlayHandle, ref VRTextureBounds_t pOverlayTextureBounds);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTextureBounds SetOverlayTextureBounds;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTextureBounds(ulong ulOverlayHandle, ref VRTextureBounds_t pOverlayTextureBounds);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTextureBounds GetOverlayTextureBounds;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTransformType(ulong ulOverlayHandle, ref VROverlayTransformType peTransformType);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTransformType GetOverlayTransformType;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTransformAbsolute(ulong ulOverlayHandle, ETrackingUniverseOrigin eTrackingOrigin, ref HmdMatrix34_t pmatTrackingOriginToOverlayTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTransformAbsolute SetOverlayTransformAbsolute;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTransformAbsolute(ulong ulOverlayHandle, ref ETrackingUniverseOrigin peTrackingOrigin, ref HmdMatrix34_t pmatTrackingOriginToOverlayTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTransformAbsolute GetOverlayTransformAbsolute;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTransformTrackedDeviceRelative(ulong ulOverlayHandle, uint unTrackedDevice, ref HmdMatrix34_t pmatTrackedDeviceToOverlayTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTransformTrackedDeviceRelative SetOverlayTransformTrackedDeviceRelative;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTransformTrackedDeviceRelative(ulong ulOverlayHandle, ref uint punTrackedDevice, ref HmdMatrix34_t pmatTrackedDeviceToOverlayTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTransformTrackedDeviceRelative GetOverlayTransformTrackedDeviceRelative;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTransformTrackedDeviceComponent(ulong ulOverlayHandle, uint unDeviceIndex, string pchComponentName);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTransformTrackedDeviceComponent SetOverlayTransformTrackedDeviceComponent;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayTransformTrackedDeviceComponent(ulong ulOverlayHandle, ref uint punDeviceIndex, string pchComponentName, uint unComponentNameSize);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayTransformTrackedDeviceComponent GetOverlayTransformTrackedDeviceComponent;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _ShowOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShowOverlay ShowOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _HideOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _HideOverlay HideOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsOverlayVisible(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsOverlayVisible IsOverlayVisible;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetTransformForOverlayCoordinates(ulong ulOverlayHandle, ETrackingUniverseOrigin eTrackingOrigin, HmdVector2_t coordinatesInOverlay, ref HmdMatrix34_t pmatTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetTransformForOverlayCoordinates GetTransformForOverlayCoordinates;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _PollNextOverlayEvent(ulong ulOverlayHandle, ref VREvent_t pEvent, uint uncbVREvent);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PollNextOverlayEvent PollNextOverlayEvent;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayInputMethod(ulong ulOverlayHandle, ref VROverlayInputMethod peInputMethod);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayInputMethod GetOverlayInputMethod;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayInputMethod(ulong ulOverlayHandle, VROverlayInputMethod eInputMethod);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayInputMethod SetOverlayInputMethod;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetOverlayMouseScale(ulong ulOverlayHandle, ref HmdVector2_t pvecMouseScale);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetOverlayMouseScale GetOverlayMouseScale;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayMouseScale(ulong ulOverlayHandle, ref HmdVector2_t pvecMouseScale);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayMouseScale SetOverlayMouseScale;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ComputeOverlayIntersection(ulong ulOverlayHandle, ref VROverlayIntersectionParams_t pParams, ref VROverlayIntersectionResults_t pResults);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ComputeOverlayIntersection ComputeOverlayIntersection;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _HandleControllerOverlayInteractionAsMouse(ulong ulOverlayHandle, uint unControllerDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _HandleControllerOverlayInteractionAsMouse HandleControllerOverlayInteractionAsMouse;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsHoverTargetOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsHoverTargetOverlay IsHoverTargetOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ulong _GetGamepadFocusOverlay();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetGamepadFocusOverlay GetGamepadFocusOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetGamepadFocusOverlay(ulong ulNewFocusOverlay);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetGamepadFocusOverlay SetGamepadFocusOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayNeighbor(EOverlayDirection eDirection, ulong ulFrom, ulong ulTo);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayNeighbor SetOverlayNeighbor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _MoveGamepadFocusToNeighbor(EOverlayDirection eDirection, ulong ulFrom);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _MoveGamepadFocusToNeighbor MoveGamepadFocusToNeighbor;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayTexture(ulong ulOverlayHandle, ref Texture_t pTexture);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayTexture SetOverlayTexture;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _ClearOverlayTexture(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ClearOverlayTexture ClearOverlayTexture;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayRaw(ulong ulOverlayHandle, IntPtr pvBuffer, uint unWidth, uint unHeight, uint unDepth);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayRaw SetOverlayRaw;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetOverlayFromFile(ulong ulOverlayHandle, string pchFilePath);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetOverlayFromFile SetOverlayFromFile;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _CreateDashboardOverlay(string pchOverlayKey, string pchOverlayFriendlyName, ref ulong pMainHandle, ref ulong pThumbnailHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CreateDashboardOverlay CreateDashboardOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsDashboardVisible();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsDashboardVisible IsDashboardVisible;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsActiveDashboardOverlay(ulong ulOverlayHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsActiveDashboardOverlay IsActiveDashboardOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _SetDashboardOverlaySceneProcess(ulong ulOverlayHandle, uint unProcessId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetDashboardOverlaySceneProcess SetDashboardOverlaySceneProcess;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _GetDashboardOverlaySceneProcess(ulong ulOverlayHandle, ref uint punProcessId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetDashboardOverlaySceneProcess GetDashboardOverlaySceneProcess;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ShowDashboard(string pchOverlayToShow);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShowDashboard ShowDashboard;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetPrimaryDashboardDevice();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetPrimaryDashboardDevice GetPrimaryDashboardDevice;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _ShowKeyboard(int eInputMode, int eLineInputMode, string pchDescription, uint unCharMax, string pchExistingText, bool bUseMinimalMode, ulong uUserValue);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShowKeyboard ShowKeyboard;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVROverlayError _ShowKeyboardForOverlay(ulong ulOverlayHandle, int eInputMode, int eLineInputMode, string pchDescription, uint unCharMax, string pchExistingText, bool bUseMinimalMode, ulong uUserValue);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ShowKeyboardForOverlay ShowKeyboardForOverlay;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetKeyboardText(System.Text.StringBuilder pchText, uint cchText);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetKeyboardText GetKeyboardText;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _HideKeyboard();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _HideKeyboard HideKeyboard;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetKeyboardTransformAbsolute(ETrackingUniverseOrigin eTrackingOrigin, ref HmdMatrix34_t pmatTrackingOriginToKeyboardTransform);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetKeyboardTransformAbsolute SetKeyboardTransformAbsolute;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetKeyboardPositionForOverlay(ulong ulOverlayHandle, HmdRect2_t avoidRect);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetKeyboardPositionForOverlay SetKeyboardPositionForOverlay;
@@ -1000,77 +1000,77 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRRenderModels
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRRenderModelError _LoadRenderModel_Async(string pchRenderModelName, ref IntPtr ppRenderModel);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LoadRenderModel_Async LoadRenderModel_Async;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _FreeRenderModel(IntPtr pRenderModel);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FreeRenderModel FreeRenderModel;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRRenderModelError _LoadTexture_Async(int textureId, ref IntPtr ppTexture);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LoadTexture_Async LoadTexture_Async;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _FreeTexture(IntPtr pTexture);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FreeTexture FreeTexture;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRRenderModelError _LoadTextureD3D11_Async(int textureId, IntPtr pD3D11Device, ref IntPtr ppD3D11Texture2D);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LoadTextureD3D11_Async LoadTextureD3D11_Async;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRRenderModelError _LoadIntoTextureD3D11_Async(int textureId, IntPtr pDstTexture);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LoadIntoTextureD3D11_Async LoadIntoTextureD3D11_Async;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _FreeTextureD3D11(IntPtr pD3D11Texture2D);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _FreeTextureD3D11 FreeTextureD3D11;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetRenderModelName(uint unRenderModelIndex, System.Text.StringBuilder pchRenderModelName, uint unRenderModelNameLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetRenderModelName GetRenderModelName;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetRenderModelCount();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetRenderModelCount GetRenderModelCount;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetComponentCount(string pchRenderModelName);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetComponentCount GetComponentCount;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetComponentName(string pchRenderModelName, uint unComponentIndex, System.Text.StringBuilder pchComponentName, uint unComponentNameLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetComponentName GetComponentName;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ulong _GetComponentButtonMask(string pchRenderModelName, string pchComponentName);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetComponentButtonMask GetComponentButtonMask;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate uint _GetComponentRenderModelName(string pchRenderModelName, string pchComponentName, System.Text.StringBuilder pchComponentRenderModelName, uint unComponentRenderModelNameLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetComponentRenderModelName GetComponentRenderModelName;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetComponentState(string pchRenderModelName, string pchComponentName, ref VRControllerState_t pControllerState, ref RenderModel_ControllerMode_State_t pState, ref RenderModel_ComponentState_t pComponentState);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetComponentState GetComponentState;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _RenderModelHasComponent(string pchRenderModelName, string pchComponentName);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RenderModelHasComponent RenderModelHasComponent;
@@ -1080,12 +1080,12 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRNotifications
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRNotificationError _CreateNotification(ulong ulOverlayHandle, ulong ulUserValue, EVRNotificationType type, string pchText, EVRNotificationStyle style, ref NotificationBitmap_t pImage, ref uint pNotificationId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _CreateNotification CreateNotification;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate EVRNotificationError _RemoveNotification(uint notificationId);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RemoveNotification RemoveNotification;
@@ -1095,62 +1095,62 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRSettings
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetSettingsErrorNameFromEnum(EVRSettingsError eError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetSettingsErrorNameFromEnum GetSettingsErrorNameFromEnum;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _Sync(bool bForce, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _Sync Sync;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetBool(string pchSection, string pchSettingsKey, bool bDefaultValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetBool GetBool;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetBool(string pchSection, string pchSettingsKey, bool bValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetBool SetBool;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate int _GetInt32(string pchSection, string pchSettingsKey, int nDefaultValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetInt32 GetInt32;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetInt32(string pchSection, string pchSettingsKey, int nValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetInt32 SetInt32;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate float _GetFloat(string pchSection, string pchSettingsKey, float flDefaultValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetFloat GetFloat;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetFloat(string pchSection, string pchSettingsKey, float flValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetFloat SetFloat;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _GetString(string pchSection, string pchSettingsKey, string pchValue, uint unValueLen, string pchDefaultValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetString GetString;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _SetString(string pchSection, string pchSettingsKey, string pchValue, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetString SetString;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _RemoveSection(string pchSection, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RemoveSection RemoveSection;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _RemoveKeyInSection(string pchSection, string pchSettingsKey, ref EVRSettingsError peError);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RemoveKeyInSection RemoveKeyInSection;
@@ -1160,122 +1160,122 @@ namespace Valve.VR
   [StructLayout(LayoutKind.Sequential)]
   public struct IVRTrackedCamera
   {
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _HasCamera(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _HasCamera HasCamera;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetCameraFirmwareDescription(uint nDeviceIndex, string pBuffer, uint nBufferLen);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCameraFirmwareDescription GetCameraFirmwareDescription;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetCameraFrameDimensions(uint nDeviceIndex, ECameraVideoStreamFormat nVideoStreamFormat, ref uint pWidth, ref uint pHeight);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCameraFrameDimensions GetCameraFrameDimensions;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _SetCameraVideoStreamFormat(uint nDeviceIndex, ECameraVideoStreamFormat nVideoStreamFormat);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetCameraVideoStreamFormat SetCameraVideoStreamFormat;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate ECameraVideoStreamFormat _GetCameraVideoStreamFormat(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCameraVideoStreamFormat GetCameraVideoStreamFormat;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _EnableCameraForStreaming(uint nDeviceIndex, bool bEnable);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _EnableCameraForStreaming EnableCameraForStreaming;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _StartVideoStream(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _StartVideoStream StartVideoStream;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _StopVideoStream(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _StopVideoStream StopVideoStream;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _IsVideoStreamActive(uint nDeviceIndex, ref bool pbPaused, ref float pflElapsedTime);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _IsVideoStreamActive IsVideoStreamActive;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate IntPtr _GetVideoStreamFrame(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetVideoStreamFrame GetVideoStreamFrame;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ReleaseVideoStreamFrame(uint nDeviceIndex, ref CameraVideoStreamFrame_t pFrameImage);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReleaseVideoStreamFrame ReleaseVideoStreamFrame;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _SetAutoExposure(uint nDeviceIndex, bool bEnable);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetAutoExposure SetAutoExposure;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _PauseVideoStream(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _PauseVideoStream PauseVideoStream;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ResumeVideoStream(uint nDeviceIndex);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ResumeVideoStream ResumeVideoStream;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetCameraDistortion(uint nDeviceIndex, float flInputU, float flInputV, ref float pflOutputU, ref float pflOutputV);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCameraDistortion GetCameraDistortion;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetCameraProjection(uint nDeviceIndex, float flWidthPixels, float flHeightPixels, float flZNear, float flZFar, ref HmdMatrix44_t pProjection);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetCameraProjection GetCameraProjection;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetRecommendedCameraUndistortion(uint nDeviceIndex, ref uint pUndistortionWidthPixels, ref uint pUndistortionHeightPixels);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetRecommendedCameraUndistortion GetRecommendedCameraUndistortion;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _SetCameraUndistortion(uint nDeviceIndex, uint nUndistortionWidthPixels, uint nUndistortionHeightPixels);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _SetCameraUndistortion SetCameraUndistortion;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _RequestVideoServicesForTool();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _RequestVideoServicesForTool RequestVideoServicesForTool;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _ReleaseVideoServicesForTool();
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReleaseVideoServicesForTool ReleaseVideoServicesForTool;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _GetVideoStreamFrameSharedTextureGL(bool bUndistorted, ref uint pglTextureId, IntPtr pglSharedTextureHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _GetVideoStreamFrameSharedTextureGL GetVideoStreamFrameSharedTextureGL;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate bool _ReleaseVideoStreamFrameSharedTextureGL(uint glTextureId, IntPtr glSharedTextureHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _ReleaseVideoStreamFrameSharedTextureGL ReleaseVideoStreamFrameSharedTextureGL;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _LockSharedTextureGL(IntPtr glSharedTextureHandle, ref CameraVideoStreamFrame_t pFrameImage);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _LockSharedTextureGL LockSharedTextureGL;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void _UnlockSharedTextureGL(IntPtr glSharedTextureHandle);
     [MarshalAs(UnmanagedType.FunctionPtr)]
     internal _UnlockSharedTextureGL UnlockSharedTextureGL;
@@ -2616,21 +2616,21 @@ namespace Valve.VR
 
   public class OpenVRInterop
   {
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_InitInternal")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_InitInternal", CallingConvention = CallingConvention.Cdecl)]
     internal static extern uint InitInternal(ref EVRInitError peError, EVRApplicationType eApplicationType);
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_ShutdownInternal")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_ShutdownInternal", CallingConvention = CallingConvention.Cdecl)]
     internal static extern void ShutdownInternal();
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsHmdPresent")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsHmdPresent", CallingConvention = CallingConvention.Cdecl)]
     internal static extern bool IsHmdPresent();
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsRuntimeInstalled")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsRuntimeInstalled", CallingConvention = CallingConvention.Cdecl)]
     internal static extern bool IsRuntimeInstalled();
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetStringForHmdError")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetStringForHmdError", CallingConvention = CallingConvention.Cdecl)]
     internal static extern IntPtr GetStringForHmdError(EVRInitError error);
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetGenericInterface")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetGenericInterface", CallingConvention = CallingConvention.Cdecl)]
     internal static extern IntPtr GetGenericInterface([In, MarshalAs(UnmanagedType.LPStr)] string pchInterfaceVersion, ref EVRInitError peError);
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsInterfaceVersionValid")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_IsInterfaceVersionValid", CallingConvention = CallingConvention.Cdecl)]
     internal static extern bool IsInterfaceVersionValid([In, MarshalAs(UnmanagedType.LPStr)] string pchInterfaceVersion);
-    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetInitToken")]
+    [DllImportAttribute("openvr_api", EntryPoint = "VR_GetInitToken", CallingConvention = CallingConvention.Cdecl)]
     internal static extern uint GetInitToken();
   }
 
@@ -3232,8 +3232,6 @@ namespace Valve.VR
     public VREvent_TouchPadMove_t touchPadMove;
     [FieldOffset(0)]
     public VREvent_SeatedZeroPoseReset_t seatedZeroPoseReset;
-    [FieldOffset(0)]
-    public VREvent_Keyboard_t keyboard; // This has to be at the end due to a mono bug
   }
 
   [StructLayout(LayoutKind.Sequential)]
@@ -3990,8 +3988,5 @@ namespace Valve.VR
     }
 
   }
-
-
-
 }
 
